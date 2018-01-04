@@ -1,0 +1,19 @@
+<%- include header %>
+<center>
+<table class="table" border="2" cellspacing="1" style="color:red;border:2px">
+	<tr><td>ID</td><td>Name</td><td>Location</td><td>Created Date</td></tr>
+
+	<% if(rows) { %>   
+	<% rows.forEach(function (row, index) { %>
+  	<tr>
+    	<td><%=row.id%></td>
+    	<td><a href="https://steemit.com/@<%= row.name%>"><%= row.name %> </td>
+		<td><%= row.location_string %></td>
+		<td><%= row.created %></td>
+    </tr>
+    <% }) %>
+<% } %>
+
+</table>
+</center>
+<%- include footer %>
